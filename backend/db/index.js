@@ -1,6 +1,10 @@
 const pgp = require("pg-promise")({});
 
-const db = pgp("postgress://localhost:5432/broken_project");
+const dotenv = require("dotevn");
+
+dotenv.config();
+
+const db = pgp("process.env.DATABASE_URL");
 
 module.exports = db; 
 
